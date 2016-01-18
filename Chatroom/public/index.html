@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>ChatApp</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="stylesheets/style.css">
+	</head>
+	<body ng-app="chatApp">		
+		<nav class="navbar-fixed-top">
+			<div class="container2 col-md-offset-3 col-md-6">
+				<a class="navbar-brand" href="#"> FSE_Chatroom </a>
+				<p class="navbar-right navbar-text" ng-hide="authenticated"><a href="#/signin">Sign in</a> or <a href="#/signup">Sign up</a>&nbsp;&nbsp;&nbsp;</p>
+				<p class="navbar-right navbar-text" ng-show="authenticated"><a href="#" ng-click="signout()">Sign out</a> </p>
+				<p class="navbar-right navbar-text" ng-show="authenticated">Signed in as <strong>{{current_user}}</strong></p>
+			</div>
+		</nav>
+		
+		<div class="container2 col-md-offset-3 col-md-6">
+			<div ng-view>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+		<script src="javascripts/chatApp.js"></script>		
+	</body>
+</html>

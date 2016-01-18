@@ -1,0 +1,24 @@
+
+	<div class="clearfix">
+	  <form ng-Submit="chat()" ng-show="authenticated">
+	    <div class="col-sm-offset-1 col-sm-8">
+	    <textarea required class="form-control" maxlength="200" rows="3" placeholder="message" ng-model="newChat.text"></textarea>
+	    </div>
+	    <div class="col-sm-2">
+	    <input class="btn submit-btn pull-left" type="submit" value="Send" />
+		</div>
+	  </form>
+	</div>
+	<br>
+	<div id="chat-stream" ng-show="authenticated">
+			<div class="chat" ng-repeat="chat in chats | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'"> 
+				<p>
+				<span class="name">{{chat.username}}</span>
+				<span class="pull-right">{{chat.created_at | date:"h:mma 'on' MMM d, y"}}</span>
+				</p>
+				<p>{{chat.text}}</p>
+			</div>
+	</div>
+
+
+
